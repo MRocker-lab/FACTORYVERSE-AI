@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface-mode: 'dark-obsidian-purple';
+  }
+
+  body {
+    @apply font-sans text-[#F4F2FA] bg-[#030206] overflow-x-hidden antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  /* Precision obsidian surface with top specular hairline and deep atmospheric elevation */
+  .surface-obsidian {
+    background: linear-gradient(180deg, rgba(19, 14, 31, 0.92) 0%, rgba(10, 7, 19, 0.96) 100%);
+    border: 1px solid rgba(167, 139, 250, 0.12);
+    box-shadow:
+      0 14px 36px -10px rgba(0, 0, 0, 0.78),
+      0 4px 12px -2px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+  }
+
+  .surface-obsidian-Interactive {
+    background: linear-gradient(180deg, rgba(19, 14, 31, 0.9) 0%, rgba(10, 7, 19, 0.95) 100%);
+    border: 1px solid rgba(167, 139, 250, 0.12);
+    box-shadow:
+      0 10px 28px -8px rgba(0, 0, 0, 0.7),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+    transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .surface-obsidian-Interactive:hover {
+    background: linear-gradient(180deg, rgba(26, 19, 43, 0.95) 0%, rgba(14, 10, 26, 0.98) 100%);
+    border-color: rgba(167, 139, 250, 0.28);
+    box-shadow:
+      0 16px 36px -8px rgba(0, 0, 0, 0.82),
+      0 0 24px -8px rgba(124, 58, 237, 0.25),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .surface-obsidian-selected {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.16) 0%, rgba(17, 13, 27, 0.96) 55%, rgba(10, 7, 19, 0.98) 100%);
+    border: 1px solid rgba(124, 58, 237, 0.75);
+    box-shadow:
+      0 16px 38px -8px rgba(0, 0, 0, 0.85),
+      0 0 28px -6px rgba(124, 58, 237, 0.38),
+      inset 0 1px 0 0 rgba(167, 139, 250, 0.25);
+  }
+
+  .surface-well {
+    background: #05030A;
+    border: 1px solid rgba(167, 139, 250, 0.09);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.65);
+  }
+}
+
+@layer utilities {
+  .bg-grid-size {
+    background-size: 32px 32px;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .obsidian-glass {
+    background: rgba(13, 9, 24, 0.82);
+    backdrop-filter: blur(16px);
+  }
+
+  @keyframes flowDash {
+    to {
+      stroke-dashoffset: -24;
+    }
+  }
+
+  .animate-conduit-flow {
+    animation: flowDash 1.4s linear infinite;
+  }
+  
+  /* Subtle custom scrollbar for Dark Obsidian + Electric Purple industrial UI */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030206;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.35);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(167, 139, 250, 0.6);
+  }
+}
