@@ -105,7 +105,7 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
         />
 
         {/* Quick Bay Status Strip */}
-        <div className="rounded-xl bg-[#0A0713] border border-[#1D182B] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-[#1D182B]">
+        <div className="rounded-xl bg-[#101816] border border-[#26332D] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-[#26332D]">
           {machines.map((m) => (
             <button
               key={m.id}
@@ -113,12 +113,12 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
               onClick={() => onSelectMachine(m.id)}
               className={`px-4 py-3 text-left transition-colors ${
                 m.id === selectedMachineId
-                  ? 'bg-[#140F22] border-b-2 border-b-[#7C3AED]'
-                  : 'hover:bg-[#110D1B]'
+                  ? 'bg-[#140F22] border-b-2 border-b-[#7EA46C]'
+                  : 'hover:bg-[#17211C]'
               }`}
             >
               <div className="flex items-center justify-between text-xs font-mono">
-                <span className="font-bold text-[#A78BFA]">{m.id}</span>
+                <span className="font-bold text-[#C2D6A8]">{m.id}</span>
                 <span
                   className={
                     m.status === 'RUNNING'
@@ -131,10 +131,10 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
                   {m.status}
                 </span>
               </div>
-              <div className="font-sans font-semibold text-sm text-[#F4F2FA] mt-0.5 truncate">
+              <div className="font-sans font-semibold text-sm text-[#F0F3EA] mt-0.5 truncate">
                 {m.name}
               </div>
-              <div className="text-xs font-mono text-[#9A94B0] mt-1">
+              <div className="text-xs font-mono text-[#A1ADA0] mt-1">
                 {m.temperature.toFixed(1)}°C • {m.powerKw.toFixed(1)} kW
               </div>
             </button>
@@ -155,22 +155,22 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
     return (
       <div className="space-y-6">
         {/* Top Divided Executive Summary Ribbon */}
-        <section className="rounded-xl bg-[#0A0713] border border-[#1D182B] overflow-hidden">
-          <div className="px-5 py-3.5 bg-[#110D1B]/70 border-b border-[#1D182B] flex flex-wrap items-center justify-between gap-2">
+        <section className="rounded-xl bg-[#101816] border border-[#26332D] overflow-hidden">
+          <div className="px-5 py-3.5 bg-[#17211C]/70 border-b border-[#26332D] flex flex-wrap items-center justify-between gap-2">
             <div>
-              <h2 className="font-sans font-semibold text-base text-[#F4F2FA]">
+              <h2 className="font-sans font-semibold text-base text-[#F0F3EA]">
                 Enterprise Production Analytics &amp; Workcell Performance
               </h2>
-              <p className="text-xs text-[#9A94B0]">
+              <p className="text-xs text-[#A1ADA0]">
                 All metrics computed directly from the active 6-machine simulation state ({overview.lastTickTimestamp})
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#1D182B]">
+          <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#26332D]">
             <div className="px-5 py-4">
-              <div className="text-xs text-[#9A94B0]">Fleet Simulated OEE</div>
-              <div className="font-mono text-2xl font-bold text-[#F4F2FA] mt-1">
+              <div className="text-xs text-[#A1ADA0]">Fleet Simulated OEE</div>
+              <div className="font-mono text-2xl font-bold text-[#F0F3EA] mt-1">
                 {overview.overallEfficiency.toFixed(1)}%
               </div>
               <div className="text-xs text-telemetry-emerald mt-0.5">
@@ -178,29 +178,29 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
               </div>
             </div>
             <div className="px-5 py-4">
-              <div className="text-xs text-[#9A94B0]">Cumulative Cycle Output</div>
-              <div className="font-mono text-2xl font-bold text-[#F4F2FA] mt-1">
+              <div className="text-xs text-[#A1ADA0]">Cumulative Cycle Output</div>
+              <div className="font-mono text-2xl font-bold text-[#F0F3EA] mt-1">
                 {totalCycles.toLocaleString()}
               </div>
-              <div className="text-xs text-[#9A94B0] mt-0.5">
+              <div className="text-xs text-[#A1ADA0] mt-0.5">
                 Across Line A &amp; Line B
               </div>
             </div>
             <div className="px-5 py-4">
-              <div className="text-xs text-[#9A94B0]">Mean Fleet Anomaly Score</div>
-              <div className="font-mono text-2xl font-bold text-[#A78BFA] mt-1">
+              <div className="text-xs text-[#A1ADA0]">Mean Fleet Anomaly Score</div>
+              <div className="font-mono text-2xl font-bold text-[#C2D6A8] mt-1">
                 {intelligenceSummary.averageAnomalyScore}/100
               </div>
-              <div className="text-xs text-[#9A94B0] mt-0.5">
+              <div className="text-xs text-[#A1ADA0] mt-0.5">
                 {intelligenceSummary.activeAnomaliesCount} active detections
               </div>
             </div>
             <div className="px-5 py-4">
-              <div className="text-xs text-[#9A94B0]">Electrical Load Utilization</div>
-              <div className="font-mono text-2xl font-bold text-[#F4F2FA] mt-1">
+              <div className="text-xs text-[#A1ADA0]">Electrical Load Utilization</div>
+              <div className="font-mono text-2xl font-bold text-[#F0F3EA] mt-1">
                 {powerUtilizationPct}%
               </div>
-              <div className="text-xs text-[#9A94B0] mt-0.5">
+              <div className="text-xs text-[#A1ADA0] mt-0.5">
                 {overview.totalPowerKw.toFixed(1)} / {totalRatedKw.toFixed(1)} kW
               </div>
             </div>
@@ -210,12 +210,12 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
         {/* Visual Comparison Charts: OEE & Health by Workcell + Power Load Breakdown */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {/* Chart 1: Workcell Efficiency & Health Comparison */}
-          <div className="rounded-xl bg-[#0A0713] border border-[#1D182B] p-5 space-y-4">
+          <div className="rounded-xl bg-[#101816] border border-[#26332D] p-5 space-y-4">
             <div>
-              <h3 className="font-sans font-semibold text-base text-[#F4F2FA]">
+              <h3 className="font-sans font-semibold text-base text-[#F0F3EA]">
                 Workcell OEE Efficiency vs. Health Score
               </h3>
-              <p className="text-xs text-[#9A94B0]">
+              <p className="text-xs text-[#A1ADA0]">
                 Live comparison across M-01 through M-06
               </p>
             </div>
@@ -224,20 +224,20 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
               {machines.map((m) => (
                 <div key={m.id} className="space-y-1.5">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-medium text-[#F4F2FA]">
-                      <span className="font-mono text-[#A78BFA] font-bold mr-1.5">
+                    <span className="font-medium text-[#F0F3EA]">
+                      <span className="font-mono text-[#C2D6A8] font-bold mr-1.5">
                         {m.id}
                       </span>
                       {m.name}
                     </span>
-                    <span className="font-mono text-[#9A94B0]">
-                      OEE <strong className="text-[#F4F2FA]">{m.efficiency.toFixed(1)}%</strong> • Health{' '}
+                    <span className="font-mono text-[#A1ADA0]">
+                      OEE <strong className="text-[#F0F3EA]">{m.efficiency.toFixed(1)}%</strong> • Health{' '}
                       <strong className="text-telemetry-emerald">{m.healthScore}%</strong>
                     </span>
                   </div>
-                  <div className="w-full h-2 rounded-full bg-[#05030A] overflow-hidden flex">
+                  <div className="w-full h-2 rounded-full bg-[#0C1210] overflow-hidden flex">
                     <div
-                      className="h-full bg-[#7C3AED] transition-all duration-300"
+                      className="h-full bg-[#7EA46C] transition-all duration-300"
                       style={{ width: `${m.efficiency}%` }}
                     />
                   </div>
@@ -247,12 +247,12 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
           </div>
 
           {/* Chart 2: Mechanical Torque Load vs. Rated Power */}
-          <div className="rounded-xl bg-[#0A0713] border border-[#1D182B] p-5 space-y-4">
+          <div className="rounded-xl bg-[#101816] border border-[#26332D] p-5 space-y-4">
             <div>
-              <h3 className="font-sans font-semibold text-base text-[#F4F2FA]">
+              <h3 className="font-sans font-semibold text-base text-[#F0F3EA]">
                 Mechanical Duty Load &amp; Power Consumption
               </h3>
-              <p className="text-xs text-[#9A94B0]">
+              <p className="text-xs text-[#A1ADA0]">
                 Percentage of continuous mechanical rating (93% critical ceiling)
               </p>
             </div>
@@ -261,18 +261,18 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
               {machines.map((m) => (
                 <div key={m.id} className="space-y-1.5">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-medium text-[#F4F2FA]">
-                      <span className="font-mono text-[#A78BFA] font-bold mr-1.5">
+                    <span className="font-medium text-[#F0F3EA]">
+                      <span className="font-mono text-[#C2D6A8] font-bold mr-1.5">
                         {m.id}
                       </span>
                       {m.name}
                     </span>
-                    <span className="font-mono text-[#9A94B0]">
-                      Load <strong className="text-[#F4F2FA]">{m.load.toFixed(1)}%</strong> •{' '}
-                      <strong className="text-[#A78BFA]">{m.powerKw.toFixed(1)} kW</strong>
+                    <span className="font-mono text-[#A1ADA0]">
+                      Load <strong className="text-[#F0F3EA]">{m.load.toFixed(1)}%</strong> •{' '}
+                      <strong className="text-[#C2D6A8]">{m.powerKw.toFixed(1)} kW</strong>
                     </span>
                   </div>
-                  <div className="w-full h-2 rounded-full bg-[#05030A] overflow-hidden">
+                  <div className="w-full h-2 rounded-full bg-[#0C1210] overflow-hidden">
                     <div
                       className={`h-full transition-all duration-300 ${
                         m.load >= 93
@@ -291,16 +291,16 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
         </div>
 
         {/* Full Workcell Comparative Telemetry Table */}
-        <section className="rounded-xl bg-[#0A0713] border border-[#1D182B] overflow-hidden">
-          <div className="px-5 py-4 border-b border-[#1D182B]">
-            <h3 className="font-sans font-semibold text-base text-[#F4F2FA]">
+        <section className="rounded-xl bg-[#101816] border border-[#26332D] overflow-hidden">
+          <div className="px-5 py-4 border-b border-[#26332D]">
+            <h3 className="font-sans font-semibold text-base text-[#F0F3EA]">
               Complete Workcell Telemetry Ledger
             </h3>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-[#1D182B] bg-[#05030A] text-[#9A94B0]">
+                <tr className="border-b border-[#26332D] bg-[#0C1210] text-[#A1ADA0]">
                   <th className="py-3 px-4 font-medium">Workcell</th>
                   <th className="py-3 px-4 font-medium">Bay / Zone</th>
                   <th className="py-3 px-4 font-medium">Status</th>
@@ -312,22 +312,22 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
                   <th className="py-3 px-4 font-medium">Power / Load</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#1D182B]">
+              <tbody className="divide-y divide-[#26332D]">
                 {machines.map((m) => {
                   const intel = intelligenceList.find((i) => i.machineId === m.id);
                   return (
                     <tr
                       key={m.id}
                       onClick={() => onSelectMachine(m.id)}
-                      className="hover:bg-[#110D1B] cursor-pointer transition-colors"
+                      className="hover:bg-[#17211C] cursor-pointer transition-colors"
                     >
-                      <td className="py-3 px-4 font-medium text-[#F4F2FA]">
-                        <span className="font-mono font-bold text-[#A78BFA] mr-2">
+                      <td className="py-3 px-4 font-medium text-[#F0F3EA]">
+                        <span className="font-mono font-bold text-[#C2D6A8] mr-2">
                           {m.id}
                         </span>
                         {m.name}
                       </td>
-                      <td className="py-3 px-4 text-[#9A94B0]">
+                      <td className="py-3 px-4 text-[#A1ADA0]">
                         {m.position.bay} • {m.position.zone}
                       </td>
                       <td className="py-3 px-4 font-mono">
@@ -346,19 +346,19 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
                       <td className="py-3 px-4 font-mono font-bold text-telemetry-emerald">
                         {m.healthScore}%
                       </td>
-                      <td className="py-3 px-4 font-mono text-[#A78BFA] font-semibold">
+                      <td className="py-3 px-4 font-mono text-[#C2D6A8] font-semibold">
                         {intel?.anomalyScore ?? 0}/100 ({intel?.riskCategory})
                       </td>
-                      <td className="py-3 px-4 font-mono text-[#F4F2FA]">
+                      <td className="py-3 px-4 font-mono text-[#F0F3EA]">
                         {m.efficiency.toFixed(1)}%
                       </td>
-                      <td className="py-3 px-4 font-mono text-[#F4F2FA]">
+                      <td className="py-3 px-4 font-mono text-[#F0F3EA]">
                         {m.temperature.toFixed(1)} °C
                       </td>
-                      <td className="py-3 px-4 font-mono text-[#F4F2FA]">
+                      <td className="py-3 px-4 font-mono text-[#F0F3EA]">
                         {m.vibration.toFixed(2)} mm/s
                       </td>
-                      <td className="py-3 px-4 font-mono text-[#F4F2FA]">
+                      <td className="py-3 px-4 font-mono text-[#F0F3EA]">
                         {m.powerKw.toFixed(1)} kW ({m.load.toFixed(0)}%)
                       </td>
                     </tr>
@@ -404,27 +404,27 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
     return (
       <div className="space-y-6">
         {/* Rolling Fleet Power Trend Line Chart */}
-        <section className="rounded-xl bg-[#0A0713] border border-[#1D182B] p-5 space-y-4">
+        <section className="rounded-xl bg-[#101816] border border-[#26332D] p-5 space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
-              <h2 className="font-sans font-semibold text-base text-[#F4F2FA]">
+              <h2 className="font-sans font-semibold text-base text-[#F0F3EA]">
                 Fleet Electrical Power Demand Trend (Rolling 24-Sample Sum)
               </h2>
-              <p className="text-xs text-[#9A94B0]">
+              <p className="text-xs text-[#A1ADA0]">
                 Aggregate kW power draw across M-01 through M-06 vs. 224.0 kW rated plant capacity
               </p>
             </div>
             <div className="text-right font-mono">
-              <div className="text-xl font-bold text-[#F4F2FA]">
+              <div className="text-xl font-bold text-[#F0F3EA]">
                 {overview.totalPowerKw.toFixed(1)} kW
               </div>
-              <div className="text-xs text-[#A78BFA]">
+              <div className="text-xs text-[#C2D6A8]">
                 {powerUtilizationPct}% Rated Load
               </div>
             </div>
           </div>
 
-          <div className="rounded-lg bg-[#05030A] border border-[#1D182B] p-4">
+          <div className="rounded-lg bg-[#0C1210] border border-[#26332D] p-4">
             <svg
               viewBox={`0 0 ${chartW} ${chartH}`}
               className="w-full h-44 overflow-visible select-none"
@@ -446,7 +446,7 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
                       x={padL - 8}
                       y={yPos + 3}
                       textAnchor="end"
-                      className="fill-[#9A94B0] text-[10px] font-mono"
+                      className="fill-[#A1ADA0] text-[10px] font-mono"
                     >
                       {yVal.toFixed(0)} kW
                     </text>
@@ -470,7 +470,7 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
               {fleetPowerSeries.length > 1 && (
                 <polyline
                   fill="none"
-                  stroke="#A78BFA"
+                  stroke="#C2D6A8"
                   strokeWidth="2.2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -482,13 +482,13 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
         </section>
 
         {/* Per-Workcell Power & Phase Current Breakdown Table */}
-        <section className="rounded-xl bg-[#0A0713] border border-[#1D182B] overflow-hidden">
-          <div className="px-5 py-4 border-b border-[#1D182B]">
-            <h3 className="font-sans font-semibold text-base text-[#F4F2FA]">
+        <section className="rounded-xl bg-[#101816] border border-[#26332D] overflow-hidden">
+          <div className="px-5 py-4 border-b border-[#26332D]">
+            <h3 className="font-sans font-semibold text-base text-[#F0F3EA]">
               Workcell Electrical Load &amp; Phase Current Ledger
             </h3>
           </div>
-          <div className="divide-y divide-[#1D182B]">
+          <div className="divide-y divide-[#26332D]">
             {machines.map((m) => {
               const pct = Math.min(
                 100,
@@ -498,40 +498,40 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
                 <div
                   key={m.id}
                   onClick={() => onSelectMachine(m.id)}
-                  className="px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-[#110D1B] cursor-pointer transition-colors"
+                  className="px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-[#17211C] cursor-pointer transition-colors"
                 >
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs font-bold text-[#A78BFA]">
+                      <span className="font-mono text-xs font-bold text-[#C2D6A8]">
                         {m.id}
                       </span>
-                      <span className="font-sans font-semibold text-sm text-[#F4F2FA]">
+                      <span className="font-sans font-semibold text-sm text-[#F0F3EA]">
                         {m.name}
                       </span>
-                      <span className="text-xs text-[#9A94B0]">
+                      <span className="text-xs text-[#A1ADA0]">
                         ({m.position.bay})
                       </span>
                     </div>
-                    <div className="text-xs font-mono text-[#9A94B0] mt-1">
-                      Phase Current: <strong className="text-[#F4F2FA]">{m.current.toFixed(1)} A</strong> (Nominal {m.thresholds.nominalCurrent} A) • Torque Load: <strong className="text-[#F4F2FA]">{m.load.toFixed(1)}%</strong>
+                    <div className="text-xs font-mono text-[#A1ADA0] mt-1">
+                      Phase Current: <strong className="text-[#F0F3EA]">{m.current.toFixed(1)} A</strong> (Nominal {m.thresholds.nominalCurrent} A) • Torque Load: <strong className="text-[#F0F3EA]">{m.load.toFixed(1)}%</strong>
                     </div>
                   </div>
 
                   <div className="w-full sm:w-64 space-y-1.5">
                     <div className="flex justify-between text-xs font-mono">
-                      <span className="text-[#F4F2FA] font-bold">
+                      <span className="text-[#F0F3EA] font-bold">
                         {m.powerKw.toFixed(1)} / {m.thresholds.ratedPowerKw} kW
                       </span>
-                      <span className="text-[#9A94B0]">{pct}%</span>
+                      <span className="text-[#A1ADA0]">{pct}%</span>
                     </div>
-                    <div className="w-full h-1.5 rounded-full bg-[#05030A] overflow-hidden">
+                    <div className="w-full h-1.5 rounded-full bg-[#0C1210] overflow-hidden">
                       <div
                         className={`h-full ${
                           pct >= 95
                             ? 'bg-telemetry-crimson'
                             : pct >= 85
                             ? 'bg-telemetry-amber'
-                            : 'bg-[#7C3AED]'
+                            : 'bg-[#7EA46C]'
                         }`}
                         style={{ width: `${pct}%` }}
                       />
@@ -549,45 +549,45 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
   // Route 4: Architecture & Design System ('system-governance')
   return (
     <div className="space-y-6">
-      <section className="rounded-xl bg-[#0A0713] border border-[#1D182B] p-6 space-y-5">
-        <div className="pb-4 border-b border-[#1D182B]">
-          <h2 className="font-sans text-xl font-bold text-[#F4F2FA]">
+      <section className="rounded-xl bg-[#101816] border border-[#26332D] p-6 space-y-5">
+        <div className="pb-4 border-b border-[#26332D]">
+          <h2 className="font-sans text-xl font-bold text-[#F0F3EA]">
             System Architecture &amp; Dark Obsidian + Electric Purple Specification
           </h2>
-          <p className="text-xs text-[#9A94B0] mt-1">
-            Active Surface Mode: {isDark ? 'Dark Obsidian (#030206 / #0A0713 / #110D1B)' : 'Light Inspection Surface'} • Active Sensor Alerts: {alerts.length}
+          <p className="text-xs text-[#A1ADA0] mt-1">
+            Active Surface Mode: {isDark ? 'Dark Obsidian (#0B1110 / #101816 / #17211C)' : 'Light Inspection Surface'} • Active Sensor Alerts: {alerts.length}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="rounded-lg bg-[#05030A] border border-[#1D182B] p-4 space-y-3">
-            <div className="text-xs font-mono font-semibold text-[#F4F2FA] flex justify-between">
+          <div className="rounded-lg bg-[#0C1210] border border-[#26332D] p-4 space-y-3">
+            <div className="text-xs font-mono font-semibold text-[#F0F3EA] flex justify-between">
               <span>OBSIDIAN SURFACES</span>
-              <span className="text-[#A78BFA]">#030206 → #110D1B</span>
+              <span className="text-[#C2D6A8]">#0B1110 → #17211C</span>
             </div>
             <div className="grid grid-cols-4 gap-2">
-              <div className="h-8 rounded bg-[#030206] border border-[#1D182B]" title="#030206 Obsidian Black" />
-              <div className="h-8 rounded bg-[#0A0713] border border-[#1D182B]" title="#0A0713 Purple-Black" />
-              <div className="h-8 rounded bg-[#110D1B] border border-[#1D182B]" title="#110D1B Dark Graphite" />
-              <div className="h-8 rounded bg-[#1D182B] border border-[#262038]" title="#1D182B Hairline Border" />
+              <div className="h-8 rounded bg-[#0B1110] border border-[#26332D]" title="#0B1110 Obsidian Black" />
+              <div className="h-8 rounded bg-[#101816] border border-[#26332D]" title="#101816 Purple-Black" />
+              <div className="h-8 rounded bg-[#17211C] border border-[#26332D]" title="#17211C Dark Graphite" />
+              <div className="h-8 rounded bg-[#26332D] border border-[#262038]" title="#26332D Hairline Border" />
             </div>
           </div>
 
-          <div className="rounded-lg bg-[#05030A] border border-[#1D182B] p-4 space-y-3">
-            <div className="text-xs font-mono font-semibold text-[#F4F2FA] flex justify-between">
+          <div className="rounded-lg bg-[#0C1210] border border-[#26332D] p-4 space-y-3">
+            <div className="text-xs font-mono font-semibold text-[#F0F3EA] flex justify-between">
               <span>ACCENT &amp; TYPOGRAPHY</span>
-              <span className="text-[#A78BFA]">#7C3AED / #A78BFA</span>
+              <span className="text-[#C2D6A8]">#7EA46C / #C2D6A8</span>
             </div>
             <div className="grid grid-cols-4 gap-2">
-              <div className="h-8 rounded bg-[#7C3AED]" title="#7C3AED Electric Purple" />
-              <div className="h-8 rounded bg-[#A78BFA]" title="#A78BFA Lavender" />
-              <div className="h-8 rounded bg-[#F4F2FA]" title="#F4F2FA Primary Text" />
-              <div className="h-8 rounded bg-[#9A94B0]" title="#9A94B0 Secondary Text" />
+              <div className="h-8 rounded bg-[#7EA46C]" title="#7EA46C Electric Purple" />
+              <div className="h-8 rounded bg-[#C2D6A8]" title="#C2D6A8 Lavender" />
+              <div className="h-8 rounded bg-[#F0F3EA]" title="#F0F3EA Primary Text" />
+              <div className="h-8 rounded bg-[#A1ADA0]" title="#A1ADA0 Secondary Text" />
             </div>
           </div>
 
-          <div className="rounded-lg bg-[#05030A] border border-[#1D182B] p-4 space-y-3">
-            <div className="text-xs font-mono font-semibold text-[#F4F2FA] flex justify-between">
+          <div className="rounded-lg bg-[#0C1210] border border-[#26332D] p-4 space-y-3">
+            <div className="text-xs font-mono font-semibold text-[#F0F3EA] flex justify-between">
               <span>SEMANTIC STATUS</span>
               <span className="text-telemetry-emerald">ISO / ISA-101</span>
             </div>
@@ -600,13 +600,13 @@ export const FoundationPreview: React.FC<FoundationPreviewProps> = ({
           </div>
         </div>
 
-        <div className="pt-3 border-t border-[#1D182B] flex flex-wrap items-center justify-between gap-2 text-xs text-[#9A94B0]">
+        <div className="pt-3 border-t border-[#26332D] flex flex-wrap items-center justify-between gap-2 text-xs text-[#A1ADA0]">
           <span className="flex items-center gap-1.5">
             <CheckCircle2 className="w-4 h-4 text-telemetry-emerald" />
             Single-Source-of-Truth Simulation Engine (6 Machines • 1.5s Interval)
           </span>
           <span className="flex items-center gap-1.5">
-            <Cpu className="w-4 h-4 text-[#A78BFA]" />
+            <Cpu className="w-4 h-4 text-[#C2D6A8]" />
             Typography: Inter (UI) + JetBrains Mono (Telemetry)
           </span>
         </div>

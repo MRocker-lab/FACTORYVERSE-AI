@@ -40,13 +40,13 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
   return (
     <div className="rounded-2xl surface-obsidian overflow-hidden">
       {/* Header Bar */}
-      <div className="px-5 py-4 bg-gradient-to-r from-[#130E21]/85 via-[#0C0816]/85 to-[#130E21]/85 border-b border-white/[0.07] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="px-5 py-4 bg-gradient-to-r from-[#151F19]/85 via-[#111A15]/85 to-[#151F19]/85 border-b border-white/[0.07] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex flex-wrap items-center gap-2.5">
-            <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded-md bg-[#7C3AED]/20 text-[#A78BFA] border border-[#7C3AED]/45">
+            <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded-md bg-[#7EA46C]/20 text-[#C2D6A8] border border-[#7EA46C]/45">
               {machine.id}
             </span>
-            <h3 className="font-sans text-lg font-bold text-[#F4F2FA]">
+            <h3 className="font-sans text-lg font-bold text-[#F0F3EA]">
               {machine.name}
             </h3>
             <span
@@ -55,22 +55,22 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
               {machine.status}
             </span>
           </div>
-          <p className="text-xs text-[#9A94B0] mt-1">
+          <p className="text-xs text-[#A1ADA0] mt-1">
             {machine.position.bay} ({machine.position.zone}) • Controller:{' '}
-            <span className="font-mono text-[#F4F2FA]">{machine.controller}</span>
+            <span className="font-mono text-[#F0F3EA]">{machine.controller}</span>
           </p>
         </div>
 
         {/* Clean Telemetry Test Profile Buttons */}
         <div className="flex items-center gap-1.5 flex-wrap shrink-0">
-          <div className="inline-flex items-center p-0.5 rounded-lg bg-[#05030A] border border-white/[0.07]">
+          <div className="inline-flex items-center p-0.5 rounded-lg bg-[#0C1210] border border-white/[0.07]">
             <button
               type="button"
               onClick={() => onSetOperatingProfile(machine.id, 'NOMINAL')}
               className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
                 activeOverride === 'NOMINAL'
-                  ? 'bg-telemetry-emerald text-[#030206] font-semibold'
-                  : 'text-[#9A94B0] hover:text-[#F4F2FA]'
+                  ? 'bg-telemetry-emerald text-[#0B1110] font-semibold'
+                  : 'text-[#A1ADA0] hover:text-[#F0F3EA]'
               }`}
             >
               Stabilize
@@ -80,8 +80,8 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
               onClick={() => onSetOperatingProfile(machine.id, 'WARNING')}
               className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
                 activeOverride === 'WARNING'
-                  ? 'bg-telemetry-amber text-[#030206] font-semibold'
-                  : 'text-[#9A94B0] hover:text-[#F4F2FA]'
+                  ? 'bg-telemetry-amber text-[#0B1110] font-semibold'
+                  : 'text-[#A1ADA0] hover:text-[#F0F3EA]'
               }`}
             >
               Drift Test
@@ -92,7 +92,7 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
               className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
                 activeOverride === 'CRITICAL'
                   ? 'bg-telemetry-crimson text-white font-semibold'
-                  : 'text-[#9A94B0] hover:text-[#F4F2FA]'
+                  : 'text-[#A1ADA0] hover:text-[#F0F3EA]'
               }`}
             >
               Stress Fault
@@ -102,7 +102,7 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
             <button
               type="button"
               onClick={() => onSetOperatingProfile(machine.id, 'DEFAULT')}
-              className="p-1.5 rounded-lg bg-[#110D1B] border border-white/[0.08] text-[#9A94B0] hover:text-[#F4F2FA]"
+              className="p-1.5 rounded-lg bg-[#17211C] border border-white/[0.08] text-[#A1ADA0] hover:text-[#F0F3EA]"
               title="Reset to default profile"
             >
               <RotateCcw className="w-3.5 h-3.5" />
@@ -115,16 +115,16 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06] border-b border-white/[0.07] bg-[#07050E]/90">
         {/* 1. Rotational Speed */}
         <div className="px-4 py-3.5">
-          <div className="text-[11px] font-medium text-[#9A94B0]">
+          <div className="text-[11px] font-medium text-[#A1ADA0]">
             Rotational Speed
           </div>
-          <div className="font-mono text-base font-bold text-[#F4F2FA] tabular-nums mt-0.5">
+          <div className="font-mono text-base font-bold text-[#F0F3EA] tabular-nums mt-0.5">
             {machine.rpm.toLocaleString()}{' '}
-            <span className="text-xs font-normal text-[#9A94B0]">RPM</span>
+            <span className="text-xs font-normal text-[#A1ADA0]">RPM</span>
           </div>
-          <div className="mt-2 w-full h-1 rounded-full bg-[#141020] overflow-hidden">
+          <div className="mt-2 w-full h-1 rounded-full bg-[#1A241F] overflow-hidden">
             <div
-              className="h-full bg-[#A78BFA] transition-all duration-300"
+              className="h-full bg-[#C2D6A8] transition-all duration-300"
               style={{ width: `${rpmPct}%` }}
             />
           </div>
@@ -132,14 +132,14 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
 
         {/* 2. Phase Current */}
         <div className="px-4 py-3.5">
-          <div className="text-[11px] font-medium text-[#9A94B0]">
+          <div className="text-[11px] font-medium text-[#A1ADA0]">
             Phase Current
           </div>
-          <div className="font-mono text-base font-bold text-[#F4F2FA] tabular-nums mt-0.5">
+          <div className="font-mono text-base font-bold text-[#F0F3EA] tabular-nums mt-0.5">
             {machine.current.toFixed(1)}{' '}
-            <span className="text-xs font-normal text-[#9A94B0]">A</span>
+            <span className="text-xs font-normal text-[#A1ADA0]">A</span>
           </div>
-          <div className="mt-2 w-full h-1 rounded-full bg-[#141020] overflow-hidden">
+          <div className="mt-2 w-full h-1 rounded-full bg-[#1A241F] overflow-hidden">
             <div
               className={`h-full transition-all duration-300 ${
                 machine.current > machine.thresholds.nominalCurrent * 1.04
@@ -153,20 +153,20 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
 
         {/* 3. Mechanical Load */}
         <div className="px-4 py-3.5">
-          <div className="text-[11px] font-medium text-[#9A94B0]">
+          <div className="text-[11px] font-medium text-[#A1ADA0]">
             Mechanical Load
           </div>
-          <div className="font-mono text-base font-bold text-[#F4F2FA] tabular-nums mt-0.5">
+          <div className="font-mono text-base font-bold text-[#F0F3EA] tabular-nums mt-0.5">
             {machine.load.toFixed(1)}%
           </div>
-          <div className="mt-2 w-full h-1 rounded-full bg-[#141020] overflow-hidden">
+          <div className="mt-2 w-full h-1 rounded-full bg-[#1A241F] overflow-hidden">
             <div
               className={`h-full transition-all duration-300 ${
                 machine.load >= 93
                   ? 'bg-telemetry-crimson'
                   : machine.load >= 88
                   ? 'bg-telemetry-amber'
-                  : 'bg-[#7C3AED]'
+                  : 'bg-[#7EA46C]'
               }`}
               style={{ width: `${Math.min(100, machine.load)}%` }}
             />
@@ -175,7 +175,7 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
 
         {/* 4. Health Score */}
         <div className="px-4 py-3.5">
-          <div className="text-[11px] font-medium text-[#9A94B0]">
+          <div className="text-[11px] font-medium text-[#A1ADA0]">
             Health Score
           </div>
           <div
@@ -189,7 +189,7 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
           >
             {machine.healthScore}%
           </div>
-          <div className="mt-2 w-full h-1 rounded-full bg-[#141020] overflow-hidden">
+          <div className="mt-2 w-full h-1 rounded-full bg-[#1A241F] overflow-hidden">
             <div
               className={`h-full transition-all duration-300 ${
                 machine.healthScore >= 80
@@ -205,16 +205,16 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
 
         {/* 5. Active Power */}
         <div className="px-4 py-3.5">
-          <div className="text-[11px] font-medium text-[#9A94B0]">
+          <div className="text-[11px] font-medium text-[#A1ADA0]">
             Active Power
           </div>
-          <div className="font-mono text-base font-bold text-[#F4F2FA] tabular-nums mt-0.5">
+          <div className="font-mono text-base font-bold text-[#F0F3EA] tabular-nums mt-0.5">
             {machine.powerKw.toFixed(1)}{' '}
-            <span className="text-xs font-normal text-[#9A94B0]">kW</span>
+            <span className="text-xs font-normal text-[#A1ADA0]">kW</span>
           </div>
-          <div className="mt-2 w-full h-1 rounded-full bg-[#141020] overflow-hidden">
+          <div className="mt-2 w-full h-1 rounded-full bg-[#1A241F] overflow-hidden">
             <div
-              className="h-full bg-[#7C3AED] transition-all duration-300"
+              className="h-full bg-[#7EA46C] transition-all duration-300"
               style={{ width: `${powerPct}%` }}
             />
           </div>
@@ -222,13 +222,13 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
 
         {/* 6. Simulated Cycles */}
         <div className="px-4 py-3.5">
-          <div className="text-[11px] font-medium text-[#9A94B0]">
+          <div className="text-[11px] font-medium text-[#A1ADA0]">
             Cycle Counter
           </div>
-          <div className="font-mono text-base font-bold text-[#F4F2FA] tabular-nums mt-0.5">
+          <div className="font-mono text-base font-bold text-[#F0F3EA] tabular-nums mt-0.5">
             {machine.cycleCount.toLocaleString()}
           </div>
-          <div className="text-[11px] font-mono text-[#9A94B0] mt-1">
+          <div className="text-[11px] font-mono text-[#A1ADA0] mt-1">
             OEE: {machine.efficiency.toFixed(1)}%
           </div>
         </div>
@@ -244,7 +244,7 @@ export const MachineDetailPanel: React.FC<MachineDetailPanelProps> = ({
           dataKey="temperature"
           warnThreshold={machine.thresholds.tempWarn}
           critThreshold={machine.thresholds.tempCrit}
-          accentColor="#A78BFA"
+          accentColor="#C2D6A8"
         />
 
         <TelemetryLineChart

@@ -77,14 +77,14 @@ export const MachineCard: React.FC<MachineCardProps> = ({
       <div className="flex items-start justify-between gap-2 pl-1.5">
         <div className="min-w-0">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs font-bold px-1.5 py-0.5 rounded bg-[#05030A] text-[#A78BFA] border border-white/[0.07]">
+            <span className="font-mono text-xs font-bold px-1.5 py-0.5 rounded bg-[#0C1210] text-[#C2D6A8] border border-white/[0.07]">
               {machine.id}
             </span>
-            <span className="text-[11px] font-mono text-[#9A94B0] truncate">
+            <span className="text-[11px] font-mono text-[#A1ADA0] truncate">
               {machine.position.bay}
             </span>
           </div>
-          <h3 className="font-sans font-semibold text-base text-[#F4F2FA] mt-1.5 group-hover:text-white truncate">
+          <h3 className="font-sans font-semibold text-base text-[#F0F3EA] mt-1.5 group-hover:text-white truncate">
             {machine.name}
           </h3>
         </div>
@@ -100,7 +100,7 @@ export const MachineCard: React.FC<MachineCardProps> = ({
       {/* Row 2: Live Sparkline & Health Score */}
       <div className="mt-3.5 pl-1.5 flex items-center justify-between gap-3">
         <div>
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-[#9A94B0] block">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-[#A1ADA0] block">
             Health Score
           </span>
           <div className="flex items-baseline gap-1.5 mt-0.5">
@@ -115,7 +115,7 @@ export const MachineCard: React.FC<MachineCardProps> = ({
             >
               {machine.healthScore}%
             </span>
-            <span className="text-[11px] font-mono text-[#9A94B0]">
+            <span className="text-[11px] font-mono text-[#A1ADA0]">
               • {machine.powerKw.toFixed(1)} kW
             </span>
           </div>
@@ -132,7 +132,7 @@ export const MachineCard: React.FC<MachineCardProps> = ({
             {recentHistory.length > 1 && (
               <polyline
                 fill="none"
-                stroke={isSelected ? '#A78BFA' : styles.stroke}
+                stroke={isSelected ? '#C2D6A8' : styles.stroke}
                 strokeWidth="1.75"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -140,7 +140,7 @@ export const MachineCard: React.FC<MachineCardProps> = ({
               />
             )}
           </svg>
-          <span className="text-[10px] font-mono text-[#9A94B0] mt-0.5">
+          <span className="text-[10px] font-mono text-[#A1ADA0] mt-0.5">
             24-pt trend
           </span>
         </div>
@@ -149,7 +149,7 @@ export const MachineCard: React.FC<MachineCardProps> = ({
       {/* Row 3: 3-Column Tabular Telemetry Readout (Temperature, Vibration, RPM) */}
       <div className="mt-3 pt-3 pl-1.5 border-t border-white/[0.07] grid grid-cols-3 gap-2">
         <div>
-          <div className="text-[10px] font-semibold uppercase tracking-wider text-[#9A94B0]">
+          <div className="text-[10px] font-semibold uppercase tracking-wider text-[#A1ADA0]">
             Temp
           </div>
           <div
@@ -158,7 +158,7 @@ export const MachineCard: React.FC<MachineCardProps> = ({
                 ? 'text-telemetry-crimson'
                 : isTempElevated
                 ? 'text-telemetry-amber'
-                : 'text-[#F4F2FA]'
+                : 'text-[#F0F3EA]'
             }`}
           >
             {machine.temperature.toFixed(1)}°C
@@ -166,7 +166,7 @@ export const MachineCard: React.FC<MachineCardProps> = ({
         </div>
 
         <div>
-          <div className="text-[10px] font-semibold uppercase tracking-wider text-[#9A94B0]">
+          <div className="text-[10px] font-semibold uppercase tracking-wider text-[#A1ADA0]">
             Vibration
           </div>
           <div
@@ -175,21 +175,21 @@ export const MachineCard: React.FC<MachineCardProps> = ({
                 ? 'text-telemetry-crimson'
                 : isVibElevated
                 ? 'text-telemetry-amber'
-                : 'text-[#F4F2FA]'
+                : 'text-[#F0F3EA]'
             }`}
           >
             {machine.vibration.toFixed(2)}{' '}
-            <span className="text-[10px] font-normal text-[#9A94B0]">mm/s</span>
+            <span className="text-[10px] font-normal text-[#A1ADA0]">mm/s</span>
           </div>
         </div>
 
         <div className="text-right">
-          <div className="text-[10px] font-semibold uppercase tracking-wider text-[#9A94B0]">
+          <div className="text-[10px] font-semibold uppercase tracking-wider text-[#A1ADA0]">
             Speed
           </div>
-          <div className="font-mono text-sm font-bold text-[#F4F2FA] tabular-nums mt-0.5">
+          <div className="font-mono text-sm font-bold text-[#F0F3EA] tabular-nums mt-0.5">
             {machine.rpm.toLocaleString()}{' '}
-            <span className="text-[10px] font-normal text-[#9A94B0]">rpm</span>
+            <span className="text-[10px] font-normal text-[#A1ADA0]">rpm</span>
           </div>
         </div>
       </div>

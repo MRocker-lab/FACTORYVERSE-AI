@@ -47,7 +47,7 @@ const renderMachineEquipmentGlyph = (id: MachineId, strokeColor: string) => {
         <g stroke={strokeColor} strokeWidth="1.6" fill="none" opacity="0.9">
           <rect x="-22" y="-14" width="44" height="28" rx="3" />
           <line x1="-22" y1="-4" x2="22" y2="-4" />
-          <rect x="-5" y="-11" width="10" height="14" fill="#0A0713" />
+          <rect x="-5" y="-11" width="10" height="14" fill="#101816" />
           <line x1="0" y1="3" x2="0" y2="9" strokeWidth="2" />
           <line x1="-12" y1="10" x2="12" y2="10" strokeWidth="2" />
         </g>
@@ -56,9 +56,9 @@ const renderMachineEquipmentGlyph = (id: MachineId, strokeColor: string) => {
       return (
         <g stroke={strokeColor} strokeWidth="1.7" fill="none" opacity="0.95">
           <path d="M -16 12 L 16 12" strokeWidth="2.5" />
-          <circle cx="-6" cy="8" r="4" fill="#0A0713" />
+          <circle cx="-6" cy="8" r="4" fill="#101816" />
           <path d="M -6 4 L 4 -8 L 14 -4" />
-          <circle cx="4" cy="-8" r="3" fill="#0A0713" />
+          <circle cx="4" cy="-8" r="3" fill="#101816" />
           <path d="M 14 -7 L 18 -9 M 14 -1 L 18 -1" />
         </g>
       );
@@ -95,37 +95,37 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
   return (
     <div className="rounded-2xl surface-obsidian overflow-hidden flex flex-col h-full">
       {/* Header Bar */}
-      <div className="px-5 py-3.5 bg-gradient-to-r from-[#130E21]/85 via-[#0C0816]/85 to-[#130E21]/85 border-b border-white/[0.07] flex flex-wrap items-center justify-between gap-3">
+      <div className="px-5 py-3.5 bg-gradient-to-r from-[#151F19]/85 via-[#111A15]/85 to-[#151F19]/85 border-b border-white/[0.07] flex flex-wrap items-center justify-between gap-3">
         <div>
           <div className="flex items-center gap-2.5">
-            <h2 className="font-sans font-semibold text-base text-[#F4F2FA]">
+            <h2 className="font-sans font-semibold text-base text-[#F0F3EA]">
               Spatial Digital Factory Topology
             </h2>
-            <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-[#7C3AED]/20 text-[#A78BFA] border border-[#7C3AED]/40">
+            <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-[#7EA46C]/20 text-[#C2D6A8] border border-[#7EA46C]/40">
               LIVE CAD TWIN
             </span>
           </div>
-          <p className="text-xs text-[#9A94B0] mt-0.5">
+          <p className="text-xs text-[#A1ADA0] mt-0.5">
             Interactive plant schematic — click any workcell bay (M-01 to M-06) to inspect live waveforms
           </p>
         </div>
 
         {/* Status Legend */}
-        <div className="flex items-center gap-4 text-xs bg-[#05030A] px-3 py-1.5 rounded-lg border border-white/[0.06]">
-          <span className="flex items-center gap-1.5 text-[#F4F2FA]">
+        <div className="flex items-center gap-4 text-xs bg-[#0C1210] px-3 py-1.5 rounded-lg border border-white/[0.06]">
+          <span className="flex items-center gap-1.5 text-[#F0F3EA]">
             <span className="w-2 h-2 rounded-full bg-telemetry-emerald shadow-[0_0_8px_#10B981]" />
             Nominal
           </span>
-          <span className="flex items-center gap-1.5 text-[#F4F2FA]">
+          <span className="flex items-center gap-1.5 text-[#F0F3EA]">
             <span className="w-2 h-2 rounded-full bg-telemetry-amber shadow-[0_0_8px_#F59E0B]" />
             Warning
           </span>
-          <span className="flex items-center gap-1.5 text-[#F4F2FA]">
+          <span className="flex items-center gap-1.5 text-[#F0F3EA]">
             <span className="w-2 h-2 rounded-full bg-telemetry-crimson animate-pulse" />
             Critical
           </span>
-          <span className="flex items-center gap-1.5 text-[#A78BFA]">
-            <span className="w-2.5 h-2.5 rounded-sm border-2 border-[#7C3AED]" />
+          <span className="flex items-center gap-1.5 text-[#C2D6A8]">
+            <span className="w-2.5 h-2.5 rounded-sm border-2 border-[#7EA46C]" />
             Focused
           </span>
         </div>
@@ -163,13 +163,13 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
               <path
                 d="M 100 0 L 0 0 0 100"
                 fill="none"
-                stroke="#1B152B"
+                stroke="#253129"
                 strokeWidth="1"
               />
             </pattern>
             <radialGradient id="selectedCellGlow" cx="50%" cy="50%" r="55%">
-              <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.28" />
-              <stop offset="100%" stopColor="#7C3AED" stopOpacity="0.0" />
+              <stop offset="0%" stopColor="#7EA46C" stopOpacity="0.28" />
+              <stop offset="100%" stopColor="#7EA46C" stopOpacity="0.0" />
             </radialGradient>
           </defs>
 
@@ -184,9 +184,9 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
               width="872"
               height="174"
               rx="10"
-              fill="#090612"
+              fill="#101813"
               fillOpacity="0.88"
-              stroke="#221B35"
+              stroke="#2B382F"
               strokeWidth="1.2"
             />
             <rect
@@ -195,12 +195,12 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
               width="872"
               height="26"
               rx="10"
-              fill="#120D20"
+              fill="#18221B"
             />
             <text
               x="38"
               y="35"
-              className="fill-[#A78BFA] text-[10px] font-mono font-semibold tracking-wider"
+              className="fill-[#C2D6A8] text-[10px] font-mono font-semibold tracking-wider"
             >
               LINE A — INBOUND DRIVE, HIGH-PRESSURE COOLANT &amp; 5-AXIS CNC MACHINING
             </text>
@@ -208,7 +208,7 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
               x="880"
               y="35"
               textAnchor="end"
-              className="fill-[#9A94B0] text-[10px] font-mono"
+              className="fill-[#A1ADA0] text-[10px] font-mono"
             >
               BAYS A-01 → A-03
             </text>
@@ -232,13 +232,13 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
               height="22"
               rx="6"
               fill="#07050E"
-              stroke="#221B35"
+              stroke="#2B382F"
             />
             <text
               x="460"
               y="219"
               textAnchor="middle"
-              className="fill-[#9A94B0] text-[9px] font-mono tracking-widest"
+              className="fill-[#A1ADA0] text-[9px] font-mono tracking-widest"
             >
               TELEMETRY BUS &amp; AGV CORRIDOR
             </text>
@@ -252,9 +252,9 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
               width="872"
               height="182"
               rx="10"
-              fill="#090612"
+              fill="#101813"
               fillOpacity="0.88"
-              stroke="#221B35"
+              stroke="#2B382F"
               strokeWidth="1.2"
             />
             <rect
@@ -263,12 +263,12 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
               width="872"
               height="26"
               rx="10"
-              fill="#120D20"
+              fill="#18221B"
             />
             <text
               x="38"
               y="257"
-              className="fill-[#A78BFA] text-[10px] font-mono font-semibold tracking-wider"
+              className="fill-[#C2D6A8] text-[10px] font-mono font-semibold tracking-wider"
             >
               LINE B — ROBOTIC MANIPULATION, 800T HYDRAULIC STAMPING &amp; THERMAL CHILLER LOOP
             </text>
@@ -276,21 +276,21 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
               x="880"
               y="257"
               textAnchor="end"
-              className="fill-[#9A94B0] text-[10px] font-mono"
+              className="fill-[#A1ADA0] text-[10px] font-mono"
             >
               BAYS B-01 → B-03
             </text>
           </g>
 
           {/* BASE PROCESS CONDUITS + ANIMATED LIVE STREAM PULSES */}
-          <g stroke="#1E1830" strokeWidth="5" fill="none">
+          <g stroke="#2A362D" strokeWidth="5" fill="none">
             <line x1="280" y1="118" x2="345" y2="118" />
             <line x1="575" y1="118" x2="640" y2="118" />
             <line x1="280" y1="342" x2="345" y2="342" />
             <line x1="575" y1="342" x2="640" y2="342" />
           </g>
           <g
-            stroke="#7C3AED"
+            stroke="#7EA46C"
             strokeWidth="2"
             strokeDasharray="6 6"
             fill="none"
@@ -341,7 +341,7 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                     height="114"
                     rx="12"
                     fill="none"
-                    stroke="#7C3AED"
+                    stroke="#7EA46C"
                     strokeWidth="2"
                   />
                 )}
@@ -368,8 +368,8 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                   width="230"
                   height="104"
                   rx="9"
-                  fill={isSelected ? '#171128' : '#0D0917'}
-                  stroke={isSelected ? '#A78BFA' : '#261F3B'}
+                  fill={isSelected ? '#1B2920' : '#131D17'}
+                  stroke={isSelected ? '#C2D6A8' : '#334037'}
                   strokeWidth={isSelected ? '1.8' : '1.2'}
                 />
 
@@ -390,13 +390,13 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                   width="64"
                   height="76"
                   rx="6"
-                  fill="#05030A"
-                  stroke="#1E1830"
+                  fill="#0C1210"
+                  stroke="#2A362D"
                 />
                 <g transform="translate(-68, 0)">
                   {renderMachineEquipmentGlyph(
                     m.id,
-                    isSelected ? '#A78BFA' : statusColor
+                    isSelected ? '#C2D6A8' : statusColor
                   )}
                 </g>
 
@@ -404,14 +404,14 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                 <text
                   x="-24"
                   y="-28"
-                  className="fill-[#A78BFA] text-[11px] font-mono font-bold"
+                  className="fill-[#C2D6A8] text-[11px] font-mono font-bold"
                 >
                   {m.id}
                 </text>
                 <text
                   x="14"
                   y="-28"
-                  className="fill-[#9A94B0] text-[10px] font-mono"
+                  className="fill-[#A1ADA0] text-[10px] font-mono"
                 >
                   • {m.position.bay}
                 </text>
@@ -420,7 +420,7 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                 <text
                   x="-24"
                   y="-10"
-                  className="fill-[#F4F2FA] text-[13px] font-sans font-semibold"
+                  className="fill-[#F0F3EA] text-[13px] font-sans font-semibold"
                 >
                   {m.name}
                 </text>
@@ -428,7 +428,7 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                 <text
                   x="-24"
                   y="10"
-                  className="fill-[#9A94B0] text-[10px] font-mono"
+                  className="fill-[#A1ADA0] text-[10px] font-mono"
                 >
                   TEMP:{' '}
                   <tspan
@@ -437,7 +437,7 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                         ? '#EF4444'
                         : m.temperature >= m.thresholds.tempWarn
                         ? '#F59E0B'
-                        : '#F4F2FA'
+                        : '#F0F3EA'
                     }
                     fontWeight="bold"
                   >
@@ -450,7 +450,7 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                         ? '#EF4444'
                         : m.vibration >= m.thresholds.vibWarn
                         ? '#F59E0B'
-                        : '#F4F2FA'
+                        : '#F0F3EA'
                     }
                     fontWeight="bold"
                   >
@@ -465,7 +465,7 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                   width="92"
                   height="6"
                   rx="3"
-                  fill="#05030A"
+                  fill="#0C1210"
                 />
                 <rect
                   x="-24"
@@ -478,7 +478,7 @@ export const FactoryFloorMap: React.FC<FactoryFloorMapProps> = ({
                 <text
                   x="76"
                   y="30"
-                  className="fill-[#F4F2FA] text-[10px] font-mono font-bold"
+                  className="fill-[#F0F3EA] text-[10px] font-mono font-bold"
                 >
                   {m.healthScore}%
                 </text>

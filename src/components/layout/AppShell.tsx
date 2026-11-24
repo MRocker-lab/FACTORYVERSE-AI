@@ -72,28 +72,28 @@ export const AppShell: React.FC<AppShellProps> = ({
     <div
       className={`min-h-screen flex flex-col lg:flex-row transition-colors duration-200 ${
         isDark
-          ? 'bg-[#030206] text-[#F4F2FA]'
+          ? 'bg-[#0B1110] text-[#F0F3EA]'
           : 'bg-enterprise-50 text-enterprise-900'
       }`}
     >
       {/* COMPACT INDUSTRIAL RAIL SIDEBAR */}
       <aside
-        className={`hidden lg:flex flex-col shrink-0 bg-[#0A0713] border-r border-[#1D182B] text-[#F4F2FA] transition-all duration-200 select-none z-30 ${
+        className={`hidden lg:flex flex-col shrink-0 bg-[#101816] border-r border-[#26332D] text-[#F0F3EA] transition-all duration-200 select-none z-30 ${
           sidebarCollapsed ? 'w-16' : 'w-56'
         }`}
       >
         {/* Compact Brand Header (h-12) */}
-        <div className="h-12 px-3.5 flex items-center justify-between border-b border-[#1D182B]">
+        <div className="h-12 px-3.5 flex items-center justify-between border-b border-[#26332D]">
           <div className="flex items-center gap-2.5 overflow-hidden">
-            <div className="w-7 h-7 rounded-lg bg-[#7C3AED] flex items-center justify-center shrink-0">
+            <div className="w-7 h-7 rounded-lg bg-[#7EA46C] flex items-center justify-center shrink-0">
               <Radio className="w-4 h-4 text-white" />
             </div>
             {!sidebarCollapsed && (
               <div className="flex items-baseline gap-1.5">
-                <span className="font-sans font-bold tracking-tight text-sm text-[#F4F2FA]">
+                <span className="font-sans font-bold tracking-tight text-sm text-[#F0F3EA]">
                   FACTORYVERSE
                 </span>
-                <span className="text-[10px] font-mono font-semibold text-[#A78BFA]">
+                <span className="text-[10px] font-mono font-semibold text-[#C2D6A8]">
                   AI
                 </span>
               </div>
@@ -103,7 +103,7 @@ export const AppShell: React.FC<AppShellProps> = ({
             type="button"
             onClick={() => setSidebarCollapsed((prev) => !prev)}
             title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-            className="p-1 rounded text-[#9A94B0] hover:text-[#F4F2FA] hover:bg-[#110D1B] transition-colors"
+            className="p-1 rounded text-[#A1ADA0] hover:text-[#F0F3EA] hover:bg-[#17211C] transition-colors"
           >
             {sidebarCollapsed ? (
               <PanelLeftOpen className="w-4 h-4" />
@@ -118,7 +118,7 @@ export const AppShell: React.FC<AppShellProps> = ({
           {/* Group 1: Operations */}
           <div>
             {!sidebarCollapsed && (
-              <div className="px-2.5 mb-1.5 text-[11px] font-sans font-semibold uppercase tracking-wider text-[#9A94B0]/80">
+              <div className="px-2.5 mb-1.5 text-[11px] font-sans font-semibold uppercase tracking-wider text-[#A1ADA0]/80">
                 Operations
               </div>
             )}
@@ -135,17 +135,17 @@ export const AppShell: React.FC<AppShellProps> = ({
                       sidebarCollapsed ? 'justify-center px-2' : 'justify-between px-2.5'
                     } py-2 rounded-lg text-[13px] font-medium transition-colors relative ${
                       isActive
-                        ? 'bg-[#110D1B] text-[#F4F2FA]'
-                        : 'text-[#9A94B0] hover:text-[#F4F2FA] hover:bg-[#110D1B]/60'
+                        ? 'bg-[#17211C] text-[#F0F3EA]'
+                        : 'text-[#A1ADA0] hover:text-[#F0F3EA] hover:bg-[#17211C]/60'
                     }`}
                   >
                     {isActive && (
-                      <span className="absolute left-0 top-1.5 bottom-1.5 w-0.5 rounded-r bg-[#7C3AED]" />
+                      <span className="absolute left-0 top-1.5 bottom-1.5 w-0.5 rounded-r bg-[#7EA46C]" />
                     )}
                     <div className="flex items-center gap-2.5 min-w-0">
                       <span
                         className={`${
-                          isActive ? 'text-[#A78BFA]' : 'text-[#9A94B0]'
+                          isActive ? 'text-[#C2D6A8]' : 'text-[#A1ADA0]'
                         } shrink-0`}
                       >
                         {getNavIcon(item.id)}
@@ -155,7 +155,7 @@ export const AppShell: React.FC<AppShellProps> = ({
                       )}
                     </div>
                     {!sidebarCollapsed && item.id === 'predictive-ai' && overviewMetrics && overviewMetrics.activeAlertsCount > 0 && (
-                      <span className="text-[11px] font-mono font-semibold px-1.5 py-0.5 rounded bg-[#181226] text-[#A78BFA]">
+                      <span className="text-[11px] font-mono font-semibold px-1.5 py-0.5 rounded bg-[#181226] text-[#C2D6A8]">
                         {overviewMetrics.activeAlertsCount}
                       </span>
                     )}
@@ -168,7 +168,7 @@ export const AppShell: React.FC<AppShellProps> = ({
           {/* Group 2: Enterprise & Maintenance */}
           <div>
             {!sidebarCollapsed && (
-              <div className="px-2.5 mb-1.5 text-[11px] font-sans font-semibold uppercase tracking-wider text-[#9A94B0]/80">
+              <div className="px-2.5 mb-1.5 text-[11px] font-sans font-semibold uppercase tracking-wider text-[#A1ADA0]/80">
                 Intelligence &amp; Ledger
               </div>
             )}
@@ -185,17 +185,17 @@ export const AppShell: React.FC<AppShellProps> = ({
                       sidebarCollapsed ? 'justify-center px-2' : 'justify-between px-2.5'
                     } py-2 rounded-lg text-[13px] font-medium transition-colors relative ${
                       isActive
-                        ? 'bg-[#110D1B] text-[#F4F2FA]'
-                        : 'text-[#9A94B0] hover:text-[#F4F2FA] hover:bg-[#110D1B]/60'
+                        ? 'bg-[#17211C] text-[#F0F3EA]'
+                        : 'text-[#A1ADA0] hover:text-[#F0F3EA] hover:bg-[#17211C]/60'
                     }`}
                   >
                     {isActive && (
-                      <span className="absolute left-0 top-1.5 bottom-1.5 w-0.5 rounded-r bg-[#7C3AED]" />
+                      <span className="absolute left-0 top-1.5 bottom-1.5 w-0.5 rounded-r bg-[#7EA46C]" />
                     )}
                     <div className="flex items-center gap-2.5 min-w-0">
                       <span
                         className={`${
-                          isActive ? 'text-[#A78BFA]' : 'text-[#9A94B0]'
+                          isActive ? 'text-[#C2D6A8]' : 'text-[#A1ADA0]'
                         } shrink-0`}
                       >
                         {getNavIcon(item.id)}
@@ -212,14 +212,14 @@ export const AppShell: React.FC<AppShellProps> = ({
         </div>
 
         {/* Minimal Plant Telemetry Footer */}
-        <div className="p-2.5 border-t border-[#1D182B]">
+        <div className="p-2.5 border-t border-[#26332D]">
           {!sidebarCollapsed ? (
             <div className="px-2 py-1.5 flex items-center justify-between text-xs">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-telemetry-emerald" />
-                <span className="text-[#9A94B0] font-medium">6 Workcells</span>
+                <span className="text-[#A1ADA0] font-medium">6 Workcells</span>
               </div>
-              <span className="font-mono text-[11px] text-[#9A94B0]">
+              <span className="font-mono text-[11px] text-[#A1ADA0]">
                 1.5s cycle
               </span>
             </div>
@@ -237,7 +237,7 @@ export const AppShell: React.FC<AppShellProps> = ({
         <header
           className={`sticky top-0 z-20 h-12 px-4 sm:px-6 flex items-center justify-between border-b backdrop-blur-md ${
             isDark
-              ? 'bg-[#0A0713]/90 border-[#1D182B] text-[#F4F2FA]'
+              ? 'bg-[#101816]/90 border-[#26332D] text-[#F0F3EA]'
               : 'bg-white/95 border-enterprise-200 text-enterprise-900'
           }`}
         >
@@ -246,18 +246,18 @@ export const AppShell: React.FC<AppShellProps> = ({
             <button
               type="button"
               onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
-              className="lg:hidden p-1.5 rounded-lg bg-[#110D1B] border border-[#211B34] text-[#A78BFA]"
+              className="lg:hidden p-1.5 rounded-lg bg-[#17211C] border border-[#2C3932] text-[#C2D6A8]"
               aria-label="Toggle Menu"
             >
               <Radio className="w-4 h-4" />
             </button>
 
             <div className="flex items-center gap-2 min-w-0">
-              <span className="text-xs text-[#9A94B0] hidden sm:inline">
+              <span className="text-xs text-[#A1ADA0] hidden sm:inline">
                 Sector A/B
               </span>
-              <span className="text-[#211B34] hidden sm:inline">/</span>
-              <h1 className="font-sans font-semibold text-sm sm:text-base text-[#F4F2FA] truncate">
+              <span className="text-[#2C3932] hidden sm:inline">/</span>
+              <h1 className="font-sans font-semibold text-sm sm:text-base text-[#F0F3EA] truncate">
                 {currentNav.label}
               </h1>
             </div>
@@ -268,7 +268,7 @@ export const AppShell: React.FC<AppShellProps> = ({
             {overviewMetrics && (
               <div className="hidden md:flex items-center gap-5 text-xs">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[#9A94B0]">Critical Machines:</span>
+                  <span className="text-[#A1ADA0]">Critical Machines:</span>
                   <span
                     className={`font-mono font-semibold ${
                       overviewMetrics.criticalCount > 0
@@ -279,9 +279,9 @@ export const AppShell: React.FC<AppShellProps> = ({
                     {overviewMetrics.criticalCount} / {overviewMetrics.totalMachines}
                   </span>
                 </div>
-                <div className="h-3.5 w-px bg-[#1D182B]" />
+                <div className="h-3.5 w-px bg-[#26332D]" />
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[#9A94B0]">Sensor Alerts:</span>
+                  <span className="text-[#A1ADA0]">Sensor Alerts:</span>
                   <span
                     className={`font-mono font-semibold ${
                       overviewMetrics.activeAlertsCount > 0
@@ -292,17 +292,17 @@ export const AppShell: React.FC<AppShellProps> = ({
                     {overviewMetrics.activeAlertsCount}
                   </span>
                 </div>
-                <div className="h-3.5 w-px bg-[#1D182B]" />
+                <div className="h-3.5 w-px bg-[#26332D]" />
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[#9A94B0]">OEE:</span>
-                  <span className="font-mono font-semibold text-[#F4F2FA]">
+                  <span className="text-[#A1ADA0]">OEE:</span>
+                  <span className="font-mono font-semibold text-[#F0F3EA]">
                     {overviewMetrics.overallEfficiency.toFixed(1)}%
                   </span>
                 </div>
-                <div className="h-3.5 w-px bg-[#1D182B]" />
+                <div className="h-3.5 w-px bg-[#26332D]" />
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[#9A94B0]">Power:</span>
-                  <span className="font-mono font-semibold text-[#F4F2FA]">
+                  <span className="text-[#A1ADA0]">Power:</span>
+                  <span className="font-mono font-semibold text-[#F0F3EA]">
                     {overviewMetrics.totalPowerKw.toFixed(1)} kW
                   </span>
                 </div>
@@ -313,12 +313,12 @@ export const AppShell: React.FC<AppShellProps> = ({
               <button
                 type="button"
                 onClick={onToggleTheme}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-[#110D1B] hover:bg-[#1D182B] border border-[#211B34] text-[#F4F2FA] transition-colors"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-[#17211C] hover:bg-[#26332D] border border-[#2C3932] text-[#F0F3EA] transition-colors"
                 title="Switch surface mode"
               >
                 {isDark ? (
                   <>
-                    <Moon className="w-3.5 h-3.5 text-[#A78BFA]" />
+                    <Moon className="w-3.5 h-3.5 text-[#C2D6A8]" />
                     <span className="hidden sm:inline">Obsidian</span>
                   </>
                 ) : (
@@ -334,7 +334,7 @@ export const AppShell: React.FC<AppShellProps> = ({
                   type="button"
                   onClick={onResetThemeAuto}
                   title="Reset to default theme"
-                  className="p-1 rounded-lg bg-[#110D1B] border border-[#211B34] text-[#9A94B0] hover:text-[#F4F2FA]"
+                  className="p-1 rounded-lg bg-[#17211C] border border-[#2C3932] text-[#A1ADA0] hover:text-[#F0F3EA]"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
                 </button>
@@ -350,20 +350,20 @@ export const AppShell: React.FC<AppShellProps> = ({
               className="fixed inset-0 bg-black/75 backdrop-blur-sm"
               onClick={() => setMobileDrawerOpen(false)}
             />
-            <div className="relative w-72 max-w-[85vw] bg-[#0A0713] border-r border-[#211B34] text-[#F4F2FA] flex flex-col z-10 p-4 space-y-5">
-              <div className="flex items-center justify-between pb-3 border-b border-[#211B34]">
+            <div className="relative w-72 max-w-[85vw] bg-[#101816] border-r border-[#2C3932] text-[#F0F3EA] flex flex-col z-10 p-4 space-y-5">
+              <div className="flex items-center justify-between pb-3 border-b border-[#2C3932]">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-[#7C3AED] flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-lg bg-[#7EA46C] flex items-center justify-center">
                     <Radio className="w-4 h-4 text-white" />
                   </div>
-                  <span className="font-sans font-bold text-sm text-[#F4F2FA]">
+                  <span className="font-sans font-bold text-sm text-[#F0F3EA]">
                     FACTORYVERSE AI
                   </span>
                 </div>
                 <button
                   type="button"
                   onClick={() => setMobileDrawerOpen(false)}
-                  className="text-xs px-2.5 py-1 rounded bg-[#110D1B] text-[#9A94B0]"
+                  className="text-xs px-2.5 py-1 rounded bg-[#17211C] text-[#A1ADA0]"
                 >
                   Close
                 </button>
@@ -371,7 +371,7 @@ export const AppShell: React.FC<AppShellProps> = ({
 
               <div className="space-y-4 overflow-y-auto">
                 <div>
-                  <div className="text-xs font-semibold text-[#9A94B0] mb-2">
+                  <div className="text-xs font-semibold text-[#A1ADA0] mb-2">
                     Operations
                   </div>
                   <div className="space-y-1">
@@ -385,8 +385,8 @@ export const AppShell: React.FC<AppShellProps> = ({
                         }}
                         className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm ${
                           activeSection === item.id
-                            ? 'bg-[#110D1B] text-[#F4F2FA] border-l-2 border-[#7C3AED]'
-                            : 'text-[#9A94B0] hover:bg-[#110D1B]'
+                            ? 'bg-[#17211C] text-[#F0F3EA] border-l-2 border-[#7EA46C]'
+                            : 'text-[#A1ADA0] hover:bg-[#17211C]'
                         }`}
                       >
                         <div className="flex items-center gap-2.5">
@@ -399,7 +399,7 @@ export const AppShell: React.FC<AppShellProps> = ({
                 </div>
 
                 <div>
-                  <div className="text-xs font-semibold text-[#9A94B0] mb-2">
+                  <div className="text-xs font-semibold text-[#A1ADA0] mb-2">
                     Intelligence &amp; Ledger
                   </div>
                   <div className="space-y-1">
@@ -413,8 +413,8 @@ export const AppShell: React.FC<AppShellProps> = ({
                         }}
                         className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm ${
                           activeSection === item.id
-                            ? 'bg-[#110D1B] text-[#F4F2FA] border-l-2 border-[#7C3AED]'
-                            : 'text-[#9A94B0] hover:bg-[#110D1B]'
+                            ? 'bg-[#17211C] text-[#F0F3EA] border-l-2 border-[#7EA46C]'
+                            : 'text-[#A1ADA0] hover:bg-[#17211C]'
                         }`}
                       >
                         <div className="flex items-center gap-2.5">
@@ -439,7 +439,7 @@ export const AppShell: React.FC<AppShellProps> = ({
       </div>
 
       {/* MOBILE BOTTOM NAVIGATION BAR */}
-      <nav className="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-[#0A0713]/95 backdrop-blur-lg border-t border-[#1D182B] px-2 py-1.5 flex items-center justify-around">
+      <nav className="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-[#101816]/95 backdrop-blur-lg border-t border-[#26332D] px-2 py-1.5 flex items-center justify-around">
         {NAVIGATION_ITEMS.slice(0, 5).map((item) => {
           const isActive = item.id === activeSection;
           return (
@@ -449,8 +449,8 @@ export const AppShell: React.FC<AppShellProps> = ({
               onClick={() => onSelectSection(item.id)}
               className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-lg transition-colors ${
                 isActive
-                  ? 'text-[#A78BFA] bg-[#110D1B]'
-                  : 'text-[#9A94B0] hover:text-[#F4F2FA]'
+                  ? 'text-[#C2D6A8] bg-[#17211C]'
+                  : 'text-[#A1ADA0] hover:text-[#F0F3EA]'
               }`}
             >
               {getNavIcon(item.id, 'w-4 h-4')}

@@ -39,7 +39,7 @@ const RadialMiniGauge: React.FC<{ value: number; color: string }> = ({
           cy="22"
           r={radius}
           fill="none"
-          stroke="rgba(167, 139, 250, 0.12)"
+          stroke="rgba(194, 214, 168, 0.12)"
           strokeWidth="3.5"
         />
         <circle
@@ -55,7 +55,7 @@ const RadialMiniGauge: React.FC<{ value: number; color: string }> = ({
           className="transition-all duration-500"
         />
       </svg>
-      <span className="absolute font-mono text-[10px] font-bold text-[#F4F2FA] tabular-nums">
+      <span className="absolute font-mono text-[10px] font-bold text-[#F0F3EA] tabular-nums">
         {Math.round(value)}%
       </span>
     </div>
@@ -77,7 +77,7 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
   return (
     <section className="rounded-2xl surface-obsidian overflow-hidden">
       {/* Top Bar: Plant Condition Telemetry Header + Segmented Status Filter + Stream Control */}
-      <div className="px-5 py-3.5 bg-gradient-to-r from-[#130E21]/90 via-[#0D0917]/90 to-[#130E21]/90 border-b border-white/[0.07] flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+      <div className="px-5 py-3.5 bg-gradient-to-r from-[#151F19]/90 via-[#131D17]/90 to-[#151F19]/90 border-b border-white/[0.07] flex flex-col lg:flex-row lg:items-center justify-between gap-3">
         <div className="flex items-center gap-3 flex-wrap">
           {isCriticalPlantState ? (
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-telemetry-crimson/15 text-telemetry-crimson border border-telemetry-crimson/40 shadow-[0_0_20px_-4px_rgba(239,68,68,0.4)]">
@@ -103,10 +103,10 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
             </span>
           )}
 
-          <div className="hidden sm:flex items-center gap-2 text-xs text-[#9A94B0] pl-1">
-            <Activity className="w-3.5 h-3.5 text-[#A78BFA]" />
+          <div className="hidden sm:flex items-center gap-2 text-xs text-[#A1ADA0] pl-1">
+            <Activity className="w-3.5 h-3.5 text-[#C2D6A8]" />
             <span>Sync Clock:</span>
-            <span className="font-mono font-semibold text-[#F4F2FA] tabular-nums bg-[#05030A] px-2 py-0.5 rounded border border-white/[0.06]">
+            <span className="font-mono font-semibold text-[#F0F3EA] tabular-nums bg-[#0C1210] px-2 py-0.5 rounded border border-white/[0.06]">
               {overview.lastTickTimestamp}
             </span>
           </div>
@@ -114,7 +114,7 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
 
         {/* Right Controls: Quick Filter Segmented Control + Stream Pause/Resume */}
         <div className="flex items-center gap-2.5 flex-wrap">
-          <div className="inline-flex items-center p-0.5 rounded-lg bg-[#05030A] border border-white/[0.07]">
+          <div className="inline-flex items-center p-0.5 rounded-lg bg-[#0C1210] border border-white/[0.07]">
             {(
               [
                 { id: 'ALL', label: `All (${overview.totalMachines})` },
@@ -129,8 +129,8 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
                 onClick={() => onSelectFilter(tab.id)}
                 className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
                   activeFilter === tab.id
-                    ? 'bg-[#7C3AED] text-white shadow-sm'
-                    : 'text-[#9A94B0] hover:text-[#F4F2FA]'
+                    ? 'bg-[#7EA46C] text-white shadow-sm'
+                    : 'text-[#A1ADA0] hover:text-[#F0F3EA]'
                 }`}
               >
                 {tab.label}
@@ -144,7 +144,7 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
             className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
               isPaused
                 ? 'bg-telemetry-emerald/15 border-telemetry-emerald/45 text-telemetry-emerald hover:bg-telemetry-emerald/25'
-                : 'bg-[#140F23] border-[#7C3AED]/45 text-[#F4F2FA] hover:bg-[#1C1530] hover:border-[#A78BFA]'
+                : 'bg-[#140F23] border-[#7EA46C]/45 text-[#F0F3EA] hover:bg-[#1C1530] hover:border-[#C2D6A8]'
             }`}
           >
             {isPaused ? (
@@ -154,7 +154,7 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
               </>
             ) : (
               <>
-                <Pause className="w-3.5 h-3.5 text-[#A78BFA]" />
+                <Pause className="w-3.5 h-3.5 text-[#C2D6A8]" />
                 <span>Pause Stream</span>
               </>
             )}
@@ -170,26 +170,26 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
           onClick={() => onSelectFilter('ALL')}
           className={`px-5 py-4 text-left transition-colors group ${
             activeFilter === 'ALL'
-              ? 'bg-[#7C3AED]/[0.08]'
+              ? 'bg-[#7EA46C]/[0.08]'
               : 'hover:bg-white/[0.02]'
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#9A94B0]">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#A1ADA0]">
               Active Fleet
             </span>
-            <span className="text-[11px] font-mono text-[#A78BFA]">
+            <span className="text-[11px] font-mono text-[#C2D6A8]">
               100% Linked
             </span>
           </div>
           <div className="mt-2 flex items-baseline gap-2">
-            <span className="font-mono text-3xl font-bold text-[#F4F2FA] tabular-nums tracking-tight">
+            <span className="font-mono text-3xl font-bold text-[#F0F3EA] tabular-nums tracking-tight">
               {overview.totalMachines}
             </span>
-            <span className="text-xs text-[#9A94B0]">Workcells</span>
+            <span className="text-xs text-[#A1ADA0]">Workcells</span>
           </div>
           {/* Multi-segment fleet health distribution bar */}
-          <div className="mt-3 w-full h-1.5 rounded-full bg-[#05030A] overflow-hidden flex gap-0.5">
+          <div className="mt-3 w-full h-1.5 rounded-full bg-[#0C1210] overflow-hidden flex gap-0.5">
             {overview.runningCount > 0 && (
               <div
                 className="h-full bg-telemetry-emerald transition-all duration-500"
@@ -230,7 +230,7 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#9A94B0]">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#A1ADA0]">
               Nominal Cells
             </span>
             <span className="w-2 h-2 rounded-full bg-telemetry-emerald shadow-[0_0_8px_#10B981]" />
@@ -239,11 +239,11 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
             <span className="font-mono text-3xl font-bold text-telemetry-emerald tabular-nums tracking-tight">
               {overview.runningCount}
             </span>
-            <span className="text-xs text-[#9A94B0]">
+            <span className="text-xs text-[#A1ADA0]">
               / {overview.totalMachines} online
             </span>
           </div>
-          <div className="mt-2.5 text-xs text-[#9A94B0] truncate">
+          <div className="mt-2.5 text-xs text-[#A1ADA0] truncate">
             Optimal thermal &amp; RMS envelope
           </div>
         </button>
@@ -261,7 +261,7 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#9A94B0]">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#A1ADA0]">
               Warning Drift
             </span>
             <span className="w-2 h-2 rounded-full bg-telemetry-amber shadow-[0_0_8px_#F59E0B]" />
@@ -270,9 +270,9 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
             <span className="font-mono text-3xl font-bold text-telemetry-amber tabular-nums tracking-tight">
               {overview.warningCount}
             </span>
-            <span className="text-xs text-[#9A94B0]">Advisory state</span>
+            <span className="text-xs text-[#A1ADA0]">Advisory state</span>
           </div>
-          <div className="mt-2.5 text-xs text-[#9A94B0] truncate">
+          <div className="mt-2.5 text-xs text-[#A1ADA0] truncate">
             Approaching upper limit
           </div>
         </button>
@@ -290,7 +290,7 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#9A94B0]">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#A1ADA0]">
               Critical Units
             </span>
             <span
@@ -305,11 +305,11 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
             <span className="font-mono text-3xl font-bold text-telemetry-crimson tabular-nums tracking-tight">
               {overview.criticalCount}
             </span>
-            <span className="text-xs font-mono text-[#9A94B0]">
+            <span className="text-xs font-mono text-[#A1ADA0]">
               ({overview.activeAlertsCount} alerts)
             </span>
           </div>
-          <div className="mt-2.5 text-xs text-[#9A94B0] truncate">
+          <div className="mt-2.5 text-xs text-[#A1ADA0] truncate">
             {overview.criticalCount > 0
               ? 'Immediate intervention req.'
               : 'Zero critical breaches'}
@@ -319,10 +319,10 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
         {/* 5. Fleet OEE & Mean Health with Radial Gauge */}
         <div className="px-5 py-4 flex items-center justify-between gap-3">
           <div>
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#9A94B0] block">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#A1ADA0] block">
               Simulated OEE
             </span>
-            <span className="font-mono text-2xl sm:text-3xl font-bold text-[#F4F2FA] tabular-nums tracking-tight mt-1 block">
+            <span className="font-mono text-2xl sm:text-3xl font-bold text-[#F0F3EA] tabular-nums tracking-tight mt-1 block">
               {overview.overallEfficiency.toFixed(1)}%
             </span>
             <span className="text-xs text-telemetry-emerald mt-1 block">
@@ -344,23 +344,23 @@ export const FactoryOverviewBar: React.FC<FactoryOverviewBarProps> = ({
         {/* 6. Active Power Demand & Load Bar */}
         <div className="px-5 py-4">
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#9A94B0]">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#A1ADA0]">
               Power Demand
             </span>
-            <span className="text-xs font-mono text-[#A78BFA] flex items-center gap-1">
+            <span className="text-xs font-mono text-[#C2D6A8] flex items-center gap-1">
               <Zap className="w-3 h-3" />
               {powerPct}%
             </span>
           </div>
           <div className="mt-2 flex items-baseline gap-1.5">
-            <span className="font-mono text-2xl sm:text-3xl font-bold text-[#F4F2FA] tabular-nums tracking-tight">
+            <span className="font-mono text-2xl sm:text-3xl font-bold text-[#F0F3EA] tabular-nums tracking-tight">
               {overview.totalPowerKw.toFixed(1)}
             </span>
-            <span className="font-mono text-xs text-[#9A94B0]">/ 224 kW</span>
+            <span className="font-mono text-xs text-[#A1ADA0]">/ 224 kW</span>
           </div>
-          <div className="mt-3 w-full h-1.5 rounded-full bg-[#05030A] overflow-hidden">
+          <div className="mt-3 w-full h-1.5 rounded-full bg-[#0C1210] overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-[#7C3AED] to-[#A78BFA] transition-all duration-500"
+              className="h-full bg-gradient-to-r from-[#7EA46C] to-[#C2D6A8] transition-all duration-500"
               style={{ width: `${powerPct}%` }}
             />
           </div>

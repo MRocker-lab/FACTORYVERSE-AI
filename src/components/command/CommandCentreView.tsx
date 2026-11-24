@@ -72,7 +72,26 @@ export const CommandCentreView: React.FC<CommandCentreViewProps> = ({
     lineBMachines.reduce((s, m) => s + m.efficiency, 0) / lineBMachines.length;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-7">
+      <section className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between pt-1">
+        <div>
+          <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C2D6A8]">
+            <span className="h-1.5 w-1.5 rounded-full bg-telemetry-emerald shadow-[0_0_10px_#10B981]" />
+            Plant operations · Sector A/B
+          </div>
+          <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-[#F0F3EA]">
+            Command centre
+          </h2>
+          <p className="mt-1.5 max-w-2xl text-sm leading-6 text-[#A1ADA0]">
+            Live production health, machine telemetry, and predictive maintenance in one view.
+          </p>
+        </div>
+        <div className="flex items-center gap-2 self-start sm:self-auto rounded-xl border border-white/[0.08] bg-[#101816]/80 px-3.5 py-2.5 text-xs text-[#A1ADA0]">
+          <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-telemetry-emerald opacity-40" /><span className="relative inline-flex h-2 w-2 rounded-full bg-telemetry-emerald" /></span>
+          Simulation stream <span className="font-semibold text-[#F0F3EA]">{isPaused ? 'Paused' : 'Live'}</span>
+        </div>
+      </section>
+
       {/* HIERARCHY LEVEL 1: FACTORY OPERATIONAL STATUS RIBBON */}
       <FactoryOverviewBar
         overview={overview}
@@ -106,10 +125,10 @@ export const CommandCentreView: React.FC<CommandCentreViewProps> = ({
       <section className="space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h2 className="font-sans font-semibold text-base text-[#F4F2FA]">
+            <h2 className="font-sans font-semibold text-base text-[#F0F3EA]">
               Workcell Telemetry &amp; Real-Time Diagnostics
             </h2>
-            <p className="text-xs text-[#9A94B0]">
+            <p className="text-xs text-[#A1ADA0]">
               Showing {filteredMachines.length} of {machines.length} machines — select any unit to update the waveform inspector
             </p>
           </div>
@@ -122,8 +141,8 @@ export const CommandCentreView: React.FC<CommandCentreViewProps> = ({
                 onClick={() => setStatusFilter(f)}
                 className={`px-3 py-1 rounded-lg text-xs font-medium border transition-colors ${
                   statusFilter === f
-                    ? 'bg-[#140F22] border-[#7C3AED] text-[#F4F2FA]'
-                    : 'bg-[#0A0713] border-[#1D182B] text-[#9A94B0] hover:text-[#F4F2FA]'
+                    ? 'bg-[#140F22] border-[#7EA46C] text-[#F0F3EA]'
+                    : 'bg-[#101816] border-[#26332D] text-[#A1ADA0] hover:text-[#F0F3EA]'
                 }`}
               >
                 {f === 'ALL' ? 'All Units (6)' : f}
@@ -157,17 +176,17 @@ export const CommandCentreView: React.FC<CommandCentreViewProps> = ({
 
       {/* HIERARCHY LEVEL 5: PRODUCTION LINE PERFORMANCE & ENERGY DISTRIBUTION STRIP */}
       <section className="rounded-2xl surface-obsidian overflow-hidden">
-        <div className="px-5 py-3.5 bg-gradient-to-r from-[#130E21]/85 via-[#0C0816]/85 to-[#130E21]/85 border-b border-white/[0.07] flex flex-wrap items-center justify-between gap-2">
+        <div className="px-5 py-3.5 bg-gradient-to-r from-[#151F19]/85 via-[#111A15]/85 to-[#151F19]/85 border-b border-white/[0.07] flex flex-wrap items-center justify-between gap-2">
           <div>
-            <h3 className="font-sans font-semibold text-sm text-[#F4F2FA]">
+            <h3 className="font-sans font-semibold text-sm text-[#F0F3EA]">
               Production Line Performance &amp; Electrical Load Allocation
             </h3>
-            <p className="text-xs text-[#9A94B0]">
+            <p className="text-xs text-[#A1ADA0]">
               Real-time efficiency and kW power draw across Line A (Machining) and Line B (Stamping &amp; Assembly)
             </p>
           </div>
-          <span className="font-mono text-xs text-[#F4F2FA] tabular-nums">
-            Total Demand: <strong className="text-[#A78BFA]">{overview.totalPowerKw.toFixed(1)} kW</strong> / 224.0 kW Rated
+          <span className="font-mono text-xs text-[#F0F3EA] tabular-nums">
+            Total Demand: <strong className="text-[#C2D6A8]">{overview.totalPowerKw.toFixed(1)} kW</strong> / 224.0 kW Rated
           </span>
         </div>
 
@@ -176,15 +195,15 @@ export const CommandCentreView: React.FC<CommandCentreViewProps> = ({
           <div className="p-5 space-y-3">
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-xs font-mono font-semibold text-[#A78BFA]">
+                <span className="text-xs font-mono font-semibold text-[#C2D6A8]">
                   NORTH PRODUCTION LINE A
                 </span>
-                <div className="text-sm font-semibold text-[#F4F2FA]">
+                <div className="text-sm font-semibold text-[#F0F3EA]">
                   M-01 Conveyor • M-02 Pump • M-03 CNC Mill
                 </div>
               </div>
               <div className="text-right font-mono tabular-nums">
-                <div className="text-sm font-bold text-[#F4F2FA]">
+                <div className="text-sm font-bold text-[#F0F3EA]">
                   {lineAPower.toFixed(1)} kW
                 </div>
                 <div className="text-xs text-telemetry-emerald">
@@ -197,15 +216,15 @@ export const CommandCentreView: React.FC<CommandCentreViewProps> = ({
                 <div
                   key={m.id}
                   onClick={() => onSelectMachine(m.id)}
-                  className="p-2.5 rounded-xl surface-well hover:border-[#7C3AED] cursor-pointer transition-colors"
+                  className="p-2.5 rounded-xl surface-well hover:border-[#7EA46C] cursor-pointer transition-colors"
                 >
                   <div className="flex items-center justify-between text-xs font-mono tabular-nums">
-                    <span className="text-[#A78BFA] font-semibold">{m.id}</span>
-                    <span className="text-[#F4F2FA]">{m.powerKw.toFixed(1)} kW</span>
+                    <span className="text-[#C2D6A8] font-semibold">{m.id}</span>
+                    <span className="text-[#F0F3EA]">{m.powerKw.toFixed(1)} kW</span>
                   </div>
-                  <div className="mt-2 w-full h-1.5 bg-[#141020] rounded-full overflow-hidden">
+                  <div className="mt-2 w-full h-1.5 bg-[#1A241F] rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-[#7C3AED] to-[#A78BFA]"
+                      className="h-full bg-gradient-to-r from-[#7EA46C] to-[#C2D6A8]"
                       style={{
                         width: `${Math.min(
                           100,
@@ -223,15 +242,15 @@ export const CommandCentreView: React.FC<CommandCentreViewProps> = ({
           <div className="p-5 space-y-3">
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-xs font-mono font-semibold text-[#A78BFA]">
+                <span className="text-xs font-mono font-semibold text-[#C2D6A8]">
                   SOUTH PRODUCTION LINE B
                 </span>
-                <div className="text-sm font-semibold text-[#F4F2FA]">
+                <div className="text-sm font-semibold text-[#F0F3EA]">
                   M-04 Robot Arm • M-05 Hydraulic Press • M-06 Chiller
                 </div>
               </div>
               <div className="text-right font-mono tabular-nums">
-                <div className="text-sm font-bold text-[#F4F2FA]">
+                <div className="text-sm font-bold text-[#F0F3EA]">
                   {lineBPower.toFixed(1)} kW
                 </div>
                 <div className="text-xs text-telemetry-emerald">
@@ -244,15 +263,15 @@ export const CommandCentreView: React.FC<CommandCentreViewProps> = ({
                 <div
                   key={m.id}
                   onClick={() => onSelectMachine(m.id)}
-                  className="p-2.5 rounded-xl surface-well hover:border-[#7C3AED] cursor-pointer transition-colors"
+                  className="p-2.5 rounded-xl surface-well hover:border-[#7EA46C] cursor-pointer transition-colors"
                 >
                   <div className="flex items-center justify-between text-xs font-mono tabular-nums">
-                    <span className="text-[#A78BFA] font-semibold">{m.id}</span>
-                    <span className="text-[#F4F2FA]">{m.powerKw.toFixed(1)} kW</span>
+                    <span className="text-[#C2D6A8] font-semibold">{m.id}</span>
+                    <span className="text-[#F0F3EA]">{m.powerKw.toFixed(1)} kW</span>
                   </div>
-                  <div className="mt-2 w-full h-1.5 bg-[#141020] rounded-full overflow-hidden">
+                  <div className="mt-2 w-full h-1.5 bg-[#1A241F] rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-[#7C3AED] to-[#A78BFA]"
+                      className="h-full bg-gradient-to-r from-[#7EA46C] to-[#C2D6A8]"
                       style={{
                         width: `${Math.min(
                           100,

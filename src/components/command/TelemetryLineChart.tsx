@@ -89,10 +89,10 @@ export const TelemetryLineChart: React.FC<TelemetryLineChartProps> = ({
     <div className="rounded-xl surface-well p-4">
       <div className="flex items-start justify-between gap-2 mb-2.5">
         <div>
-          <h4 className="font-sans font-semibold text-sm text-[#F4F2FA]">
+          <h4 className="font-sans font-semibold text-sm text-[#F0F3EA]">
             {title}
           </h4>
-          <p className="text-xs text-[#9A94B0]">{subtitle}</p>
+          <p className="text-xs text-[#A1ADA0]">{subtitle}</p>
         </div>
         <div className="text-right">
           <div
@@ -101,28 +101,28 @@ export const TelemetryLineChart: React.FC<TelemetryLineChartProps> = ({
                 ? 'text-telemetry-crimson'
                 : isWarn
                 ? 'text-telemetry-amber'
-                : 'text-[#F4F2FA]'
+                : 'text-[#F0F3EA]'
             }`}
           >
             {currentVal.toFixed(decimals)}{' '}
-            <span className="text-xs font-normal text-[#9A94B0]">{unit}</span>
+            <span className="text-xs font-normal text-[#A1ADA0]">{unit}</span>
           </div>
-          <div className="text-[11px] font-mono text-[#9A94B0] tabular-nums">
+          <div className="text-[11px] font-mono text-[#A1ADA0] tabular-nums">
             Warn {warnThreshold} • Crit {critThreshold} {unit}
           </div>
         </div>
       </div>
 
       {/* Min / Avg / Max Live Telemetry Strip */}
-      <div className="flex items-center gap-4 text-[11px] font-mono text-[#9A94B0] mb-2 pb-2 border-b border-white/[0.05] tabular-nums">
+      <div className="flex items-center gap-4 text-[11px] font-mono text-[#A1ADA0] mb-2 pb-2 border-b border-white/[0.05] tabular-nums">
         <span>
-          MIN: <strong className="text-[#F4F2FA]">{minVal.toFixed(decimals)}</strong>
+          MIN: <strong className="text-[#F0F3EA]">{minVal.toFixed(decimals)}</strong>
         </span>
         <span>
-          AVG: <strong className="text-[#F4F2FA]">{avgVal.toFixed(decimals)}</strong>
+          AVG: <strong className="text-[#F0F3EA]">{avgVal.toFixed(decimals)}</strong>
         </span>
         <span>
-          PEAK: <strong className="text-[#F4F2FA]">{maxVal.toFixed(decimals)}</strong>
+          PEAK: <strong className="text-[#F0F3EA]">{maxVal.toFixed(decimals)}</strong>
         </span>
       </div>
 
@@ -148,14 +148,14 @@ export const TelemetryLineChart: React.FC<TelemetryLineChartProps> = ({
                 y1={yPos}
                 x2={width - padRight}
                 y2={yPos}
-                stroke="rgba(167, 139, 250, 0.08)"
+                stroke="rgba(194, 214, 168, 0.08)"
                 strokeWidth="1"
               />
               <text
                 x={padLeft - 8}
                 y={yPos + 3}
                 textAnchor="end"
-                className="fill-[#9A94B0] text-[10px] font-mono"
+                className="fill-[#A1ADA0] text-[10px] font-mono"
               >
                 {yVal.toFixed(dataKey === 'vibration' ? 1 : 0)}
               </text>
@@ -181,7 +181,7 @@ export const TelemetryLineChart: React.FC<TelemetryLineChartProps> = ({
               width="34"
               height="11"
               rx="2"
-              fill="#05030A"
+              fill="#0C1210"
             />
             <text
               x={width - padRight - 4}
@@ -212,7 +212,7 @@ export const TelemetryLineChart: React.FC<TelemetryLineChartProps> = ({
               width="30"
               height="11"
               rx="2"
-              fill="#05030A"
+              fill="#0C1210"
             />
             <text
               x={width - padRight - 4}
@@ -266,7 +266,7 @@ export const TelemetryLineChart: React.FC<TelemetryLineChartProps> = ({
               x={padLeft}
               y={height - 5}
               textAnchor="start"
-              className="fill-[#9A94B0] text-[10px] font-mono"
+              className="fill-[#A1ADA0] text-[10px] font-mono"
             >
               {data[0].timestamp}
             </text>
@@ -274,7 +274,7 @@ export const TelemetryLineChart: React.FC<TelemetryLineChartProps> = ({
               x={padLeft + plotW / 2}
               y={height - 5}
               textAnchor="middle"
-              className="fill-[#9A94B0] text-[10px] font-mono"
+              className="fill-[#A1ADA0] text-[10px] font-mono"
             >
               {data[Math.floor(data.length / 2)].timestamp}
             </text>
@@ -282,7 +282,7 @@ export const TelemetryLineChart: React.FC<TelemetryLineChartProps> = ({
               x={width - padRight}
               y={height - 5}
               textAnchor="end"
-              className="fill-[#F4F2FA] text-[10px] font-mono"
+              className="fill-[#F0F3EA] text-[10px] font-mono"
             >
               {data[data.length - 1].timestamp}
             </text>

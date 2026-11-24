@@ -35,17 +35,17 @@ export const AlertsPanel: React.FC<AlertsPanelProps> = ({
   return (
     <div className="rounded-2xl surface-obsidian flex flex-col h-full overflow-hidden">
       {/* Header */}
-      <div className="px-5 py-3.5 bg-gradient-to-r from-[#130E21]/85 via-[#0C0816]/85 to-[#130E21]/85 border-b border-white/[0.07] flex items-center justify-between gap-2">
+      <div className="px-5 py-3.5 bg-gradient-to-r from-[#151F19]/85 via-[#111A15]/85 to-[#151F19]/85 border-b border-white/[0.07] flex items-center justify-between gap-2">
         <div>
-          <h2 className="font-sans font-semibold text-base text-[#F4F2FA]">
+          <h2 className="font-sans font-semibold text-base text-[#F0F3EA]">
             Active Incidents &amp; Sensor Alerts
           </h2>
-          <p className="text-xs text-[#9A94B0] mt-0.5">
-            <span className="font-mono text-[#F4F2FA] font-semibold tabular-nums">
+          <p className="text-xs text-[#A1ADA0] mt-0.5">
+            <span className="font-mono text-[#F0F3EA] font-semibold tabular-nums">
               {alerts.length}
             </span>{' '}
             sensor {alerts.length === 1 ? 'alert' : 'alerts'} across{' '}
-            <span className="font-mono text-[#F4F2FA] font-semibold tabular-nums">
+            <span className="font-mono text-[#F0F3EA] font-semibold tabular-nums">
               {affectedMachineIds.size}
             </span>{' '}
             {affectedMachineIds.size === 1 ? 'machine' : 'machines'} ({criticalMachineCount} critical{' '}
@@ -73,10 +73,10 @@ export const AlertsPanel: React.FC<AlertsPanelProps> = ({
         {alerts.length === 0 ? (
           <div className="rounded-xl surface-well p-6 text-center space-y-2">
             <CheckCircle2 className="w-7 h-7 text-telemetry-emerald mx-auto" />
-            <div className="font-sans font-semibold text-sm text-[#F4F2FA]">
+            <div className="font-sans font-semibold text-sm text-[#F0F3EA]">
               No Active Sensor Threshold Breaches
             </div>
-            <p className="text-xs text-[#9A94B0]">
+            <p className="text-xs text-[#A1ADA0]">
               All 6 workcells (M-01 through M-06) are operating within nominal temperature, vibration, current, and torque limits.
             </p>
           </div>
@@ -90,11 +90,11 @@ export const AlertsPanel: React.FC<AlertsPanelProps> = ({
                 key={alert.id}
                 className={`rounded-xl p-3.5 border relative overflow-hidden transition-all ${
                   alert.acknowledged
-                    ? 'bg-[#05030A]/60 border-white/[0.06] opacity-70'
+                    ? 'bg-[#0C1210]/60 border-white/[0.06] opacity-70'
                     : isCrit
                     ? 'bg-gradient-to-r from-telemetry-crimson/[0.12] via-[#0B0714] to-[#0B0714] border-telemetry-crimson/45'
                     : 'bg-gradient-to-r from-telemetry-amber/[0.10] via-[#0B0714] to-[#0B0714] border-telemetry-amber/40'
-                } ${isSelectedMachine ? 'ring-1 ring-[#7C3AED]' : ''}`}
+                } ${isSelectedMachine ? 'ring-1 ring-[#7EA46C]' : ''}`}
               >
                 {/* Left severity accent bar */}
                 <div
@@ -123,29 +123,29 @@ export const AlertsPanel: React.FC<AlertsPanelProps> = ({
                       <button
                         type="button"
                         onClick={() => onSelectMachine(alert.machineId)}
-                        className="text-xs font-mono font-semibold text-[#A78BFA] hover:underline inline-flex items-center gap-0.5"
+                        className="text-xs font-mono font-semibold text-[#C2D6A8] hover:underline inline-flex items-center gap-0.5"
                       >
                         {alert.machineId} {alert.machineName}
                         <ArrowUpRight className="w-3 h-3" />
                       </button>
                     </div>
-                    <span className="text-[11px] font-mono text-[#9A94B0] tabular-nums shrink-0">
+                    <span className="text-[11px] font-mono text-[#A1ADA0] tabular-nums shrink-0">
                       {alert.timestamp}
                     </span>
                   </div>
 
                   <div className="mt-1.5">
-                    <div className="text-sm font-semibold text-[#F4F2FA]">
+                    <div className="text-sm font-semibold text-[#F0F3EA]">
                       {alert.title}
                     </div>
-                    <p className="text-xs text-[#9A94B0] mt-0.5 leading-relaxed">
+                    <p className="text-xs text-[#A1ADA0] mt-0.5 leading-relaxed">
                       {alert.description}
                     </p>
                   </div>
 
                   <div className="mt-2.5 pt-2 border-t border-white/[0.06] flex items-center justify-between gap-2 text-xs">
                     <div className="font-mono flex items-center gap-3 tabular-nums">
-                      <span className="text-[#9A94B0]">
+                      <span className="text-[#A1ADA0]">
                         Measured:{' '}
                         <strong
                           className={
@@ -155,7 +155,7 @@ export const AlertsPanel: React.FC<AlertsPanelProps> = ({
                           {alert.measuredValue}
                         </strong>
                       </span>
-                      <span className="text-[#9A94B0]">
+                      <span className="text-[#A1ADA0]">
                         Limit: {alert.thresholdValue}
                       </span>
                     </div>
@@ -166,7 +166,7 @@ export const AlertsPanel: React.FC<AlertsPanelProps> = ({
                       className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${
                         alert.acknowledged
                           ? 'bg-telemetry-emerald/15 border-telemetry-emerald/40 text-telemetry-emerald'
-                          : 'bg-[#140F23] border-white/[0.1] text-[#F4F2FA] hover:border-[#7C3AED]'
+                          : 'bg-[#140F23] border-white/[0.1] text-[#F0F3EA] hover:border-[#7EA46C]'
                       }`}
                     >
                       <Check className="w-3 h-3" />
@@ -181,7 +181,7 @@ export const AlertsPanel: React.FC<AlertsPanelProps> = ({
       </div>
 
       {/* Footer Status Summary */}
-      <div className="px-5 py-2.5 bg-[#05030A] border-t border-white/[0.06] flex items-center justify-between text-xs text-[#9A94B0]">
+      <div className="px-5 py-2.5 bg-[#0C1210] border-t border-white/[0.06] flex items-center justify-between text-xs text-[#A1ADA0]">
         <span>Unacknowledged: {unacknowledgedCount}</span>
         <span className="font-mono">Multi-sensor correlation active</span>
       </div>
